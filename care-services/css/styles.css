@@ -264,10 +264,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
+    color: #000000;
+    /* darker text for contrast */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
     max-width: 800px;
     padding: 0 40px;
     z-index: 2;
+    text-align: center;
+    /* center align within overlay */
 }
 
 @keyframes float {
