@@ -1,7 +1,3 @@
-/* ========================================
-   HARVARD-STYLE RED LINES & HEADER BAR
-   ======================================== */
-
 .red-line {
     width: 40px;
     height: 3px;
@@ -251,12 +247,12 @@ body {
 
 .hero {
     height: 85vh;
-    background-image: linear-gradient(rgba(11, 31, 58, 0.6), rgba(11, 31, 58, 0.6)), url("../images/care-services/interesting-view.jpeg");
-    background-size: cover, cover;
-    background-position: center center, center center;
-    background-repeat: no-repeat, no-repeat;
+    /* show photo directly by removing the dark overlay gradient */
+    background-image: url("../images/care-services/hotel.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: scroll;
-    background-blend-mode: overlay;
     display: flex;
     align-items: center;
     justify-content: center;
