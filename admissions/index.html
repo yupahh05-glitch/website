@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - STEM Schools</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        
+         :root {
+            --primary-crimson: #7A0F14;
+            /* Deep Harvard Crimson */
+            --professional-black: #0B0B0B;
+            --premium-gold: #D4AF37;
+            /* only for the small top-left title */
+            --white: #FFFFFF;
+            --light-gray: #F8F8F8;
+            --border-color: #E9E9E9;
+            --crimson-shadow: rgba(122, 15, 20, 0.22);
+        }
+        
+        html {
+            scroll-behavior: smooth
+        }
+        
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: var(--professional-black);
+            background: var(--white);
+            line-height: 1.7
+        }
+        /* Header (top-left) */
+        
+        .site-header {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 12;
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+        
+        .site-header img {
+            height: 48px;
+            width: auto;
+            display: block
+        }
+        
+        .site-header .unit-title-small {
+            color: var(--premium-gold);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px
+        }
+        /* HERO */
+        
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden
+        }
+        
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            background-image: url("Ministry of Education .jpeg");
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            filter: saturate(0.98) contrast(1.08)
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.72));
+            z-index: 2
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: var(--white);
+            width: 92%;
+            max-width: 1100px;
+            padding-top: 64px
+        }
+        
+        .hero-content h1 {
+            font-size: 84px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: var(--white);
+            text-shadow: 0 12px 40px var(--crimson-shadow);
+            animation: fadeIn 1s ease both
+        }
+        
+        .hero-content h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
+            animation: fadeIn 1.1s ease both
+        }
+        /* Internal nav */
+        
+        .internal-nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 900;
+            box-shadow: 0 6px 18px rgba(11, 11, 11, 0.06)
+        }
+        
+        .internal-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 36px;
+            display: flex;
+            gap: 6px;
+            list-style: none
+        }
+        
+        .internal-nav-content li {
+            flex: 1;
+            min-width: 150px
+        }
+        
+        .internal-nav-content a {
+            display: block;
+            padding: 12px 14px;
+            text-decoration: none;
+            color: var(--professional-black);
+            font-weight: 600;
+            text-align: center;
+            border-radius: 6px;
+            transition: all .28s
+        }
+        
+        .internal-nav-content a:hover {
+            color: var(--primary-crimson);
+            background: rgba(11, 11, 11, 0.03)
+        }
+        
+        .internal-nav-content a.active {
+            color: var(--primary-crimson);
+            box-shadow: 0 0 0 2px rgba(11, 11, 11, 0.06);
+            background: rgba(11, 11, 11, 0.02);
+            font-weight: 700
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px
+        }
+        
+        .intro-section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color)
+        }
+        
+        .intro-content {
+            background: var(--light-gray);
+            padding: 70px 60px;
+            border-radius: 6px;
+            box-shadow: 0 8px 30px rgba(11, 11, 11, 0.06)
+        }
+        
+        .intro-content h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--professional-black);
+            margin-bottom: 8px
+        }
+        
+        .intro-content h3 {
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--primary-crimson);
+            margin-bottom: 40px
+        }
+        /* Sections */
+        
+        content-section {
+            display: block;
+            padding: 110px 0;
+            border-bottom: 1px solid var(--border-color)
+        }
+        
+        content-section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 100px
+        }
+        
+        .section-header {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            margin-bottom: 34px
+        }
+        
+        .section-number {
+            font-size: 160px;
+            font-weight: 800;
+            color: var(--primary-crimson);
+            opacity: 1;
+            min-width: 220px;
+            font-family: Georgia, 'Times New Roman', serif;
+            letter-spacing: 4px;
+            line-height: 0.92;
+            position: relative
+        }
+        
+        .section-title h2 {
+            font-size: 54px;
+            font-weight: 800;
+            color: var(--professional-black);
+            margin-bottom: 20px;
+            letter-spacing: 0.8px;
+            position: relative;
+            padding-bottom: 14px;
+            transition: color .28s ease
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 56px;
+            background: #111;
+            transition: all .3s cubic-bezier(.2, .9, .2, 1);
+            transform-origin: left center
+        }
+        
+        .section-title h2:hover {
+            color: #050505
+        }
+        
+        .section-title h2:hover::after {
+            background: var(--primary-crimson);
+            height: 2px;
+            transform: scaleX(1.05)
+        }
+        /* selected (on click) — stronger crimson underline and slight expansion */
+        
+        content-section.selected .section-title h2::after {
+            background: #8B0000;
+            height: 4px;
+            transform: scaleX(1.2);
+            width: 70%
+        }
+        
+        .section-content {
+            background: var(--white);
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 12px 36px rgba(11, 11, 11, 0.06);
+            margin-top: 30px
+        }
+        /* Clickable card wrapper */
+        
+        .section-card {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            padding: 40px;
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+            border: 2px solid transparent;
+            border-radius: 8px
+        }
+        
+        .section-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 70px rgba(11, 11, 11, 0.09)
+        }
+        
+        .section-card.selected {
+            border-color: var(--primary-crimson);
+            box-shadow: 0 28px 80px rgba(11, 11, 11, 0.12)
+        }
+        
+        .section-figure {
+            flex: 0 0 380px;
+            max-width: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        
+        .section-figure {
+            position: relative;
+            flex: 0 0 380px;
+            max-width: 380px;
+            height: 260px;
+            display: block;
+            overflow: hidden;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: transform .30s ease, box-shadow .30s ease, border-color .36s ease
+        }
+        
+        .section-figure img,
+        .section-figure svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 8px 20px rgba(11, 11, 11, 0.08);
+            transition: transform .30s ease, box-shadow .30s ease
+        }
+        /* Hover: slight lift, subtle shadow (exact values requested) */
+        
+        .section-figure:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 44px rgba(11, 11, 11, 0.10)
+        }
+        
+        .section-figure:hover img,
+        .section-figure:hover svg {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 44px rgba(11, 11, 11, 0.10)
+        }
+        /* thin Harvard Crimson border appears on click (no glow, no gradient) */
+        
+        .section-figure.figure-selected {
+            border-color: var(--primary-crimson);
+            transform: scale(1.025);
+            box-shadow: 0 28px 64px rgba(11, 11, 11, 0.12)
+        }
+        
+        .section-figure.figure-selected img,
+        .section-figure.figure-selected svg {
+            transform: scale(1.02)
+        }
+        /* When a card is selected, keep a modest translate for the card but do not double-scale it; the figure handles the click-scale */
+        
+        .section-card.selected {
+            transform: translateY(-6px);
+            box-shadow: 0 34px 90px rgba(11, 11, 11, 0.14)
+        }
+        
+        .section-body {
+            flex: 1
+        }
+        /* Alternate image alignment */
+        
+        content-section:nth-of-type(even) .section-card {
+            flex-direction: row-reverse
+        }
+        
+        content-section:nth-of-type(even) .section-figure {
+            margin-left: 0
+        }
+        
+        content-section:nth-of-type(odd) .section-figure {
+            margin-right: 0
+        }
+        /* Nav underline for active */
+        
+        .internal-nav-content a {
+            position: relative
+        }
+        
+        .internal-nav-content a::after {
+            content: '';
+            position: absolute;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            bottom: 8px;
+            background: transparent;
+            transition: background .28s, transform .28s;
+            transform: scaleX(0)
+        }
+        
+        .internal-nav-content a.active::after {
+            background: var(--primary-crimson);
+            transform: scaleX(1)
+        }
+        
+        footer {
+            background: var(--professional-black);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 5px solid var(--primary-crimson)
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px)
+            }
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+        /* Responsive */
+        
+        @media(max-width:1024px) {
+            .hero-content h1 {
+                font-size: 70px
+            }
+            .hero-content h2 {
+                font-size: 28px
+            }
+            .container {
+                padding: 0 30px
+            }
+        }
+        
+        @media(max-width:768px) {
+            .hero {
+                min-height: 550px
+            }
+            .hero-content h1 {
+                font-size: 50px
+            }
+            .hero-content h2 {
+                font-size: 22px
+            }
+            .site-header img {
+                height: 40px
+            }
+        }
+        
+        @media(max-width:480px) {
+            .hero {
+                min-height: 480px
+            }
+            .hero-content h1 {
+                font-size: 36px
+            }
+            .hero-content h2 {
+                font-size: 16px
+            }
+            .section-number {
+                font-size: 72px;
+                min-width: 80px
+            }
+            .internal-nav-content {
+                overflow-x: auto
+            }
+            .section-card {
+                flex-direction: column
+            }
+            .section-figure {
+                width: 100%;
+                max-width: none
+            }
+        }
+        /* Typography improvements */
+        
+        body p {
+            font-size: 18px;
+            line-height: 1.95
+        }
+        
+        .hero-content h1 {
+            font-size: 92px
+        }
+        
+        .hero-content h2 {
+            font-size: 38px
+        }
+        
+        .intro-content h2 {
+            font-size: 54px
+        }
+    </style>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar solid" role="navigation">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">STEM School – Behera</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="harvard-backdrop" hidden></div>
+    <aside class="harvard-menu" aria-hidden="true">
+        <nav class="harvard-nav" aria-label="Main navigation">
+            <ul class="harvard-list">
+                <li class="menu-item">
+                    <a href="../index.html" class="menu-main-link">STEM School – Behera</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../circullum2/index.html" class="menu-main-link">Academics</a>
+                </li>
+                <li class="menu-item">
+                    <a href="index.html" class="menu-main-link">Admissions</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">Campus Life</button>
+                    <ul class="submenu">
+                        <li><a href="../campus-life/index.html">Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="../extracurricular/extracurricular.html" class="menu-main-link">Extracurricular</a>
+                </li>
+                <li class="menu-item"> <a href="../care-services/index.html" class="menu-main-link">Care Services</a>
+                </li>
+                <li class="menu-item"> <button class="menu-parent" aria-expanded="false">About</button>
+                    <ul class="submenu">
+                        <li><a href="../about/history.html">History</a></li>
+                        <li><a href="../team/index.html">Our Team</a></li>
+                        <li><a href="../care-services/index.html">Care Services</a></li>
+                        <li><a href="../care/index.html">Who We Are</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- FULL-HEIGHT HERO SECTION -->
+    <section class="hero">
+        <div class="hero-background" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+            <h1>ADMISSIONS</h1>
+            <h2>STEM Schools for Science and Technology</h2>
+        </div>
+    </section>
+
+    <!-- INTERNAL NAVIGATION MENU (STICKY) -->
+    <nav class="internal-nav" aria-label="Internal navigation">
+        <ul class="internal-nav-content">
+            <li><a href="#academic-eligibility" class="nav-menu-item active">Academic Eligibility</a></li>
+            <li><a href="#nationality-requirement" class="nav-menu-item">Nationality Requirement</a></li>
+            <li><a href="#educational-background" class="nav-menu-item">Educational Background</a></li>
+            <li><a href="#tuition-structure" class="nav-menu-item">Tuition Structure</a></li>
+            <li><a href="#application" class="nav-menu-item">Application and School Preferences</a></li>
+            <li><a href="#examination" class="nav-menu-item">Admission Examination</a></li>
+            <li><a href="#selection" class="nav-menu-item">Selection and Placement</a></li>
+            <li><a href="#enrollment" class="nav-menu-item">Final Enrollment Procedures</a></li>
+        </ul>
+    </nav>
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section reveal">
+        <div class="container">
+            <div class="intro-content">
+                <h2>ADMISSIONS</h2>
+                <h3>STEM Schools for Science and Technology</h3>
+                <p>Admission to STEM Schools for Science and Technology is a highly selective, merit-based process designed to identify students who demonstrate exceptional academic achievement, advanced analytical thinking, and strong potential in scientific
+                    and mathematical reasoning. The admission framework is established annually by the relevant educational authorities, and criteria may be subject to periodic revision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE GALLERY (removed) -->
+
+    <!-- ACADEMIC ELIGIBILITY SECTION -->
+    <content-section class="reveal" id="academic-eligibility">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div class="section-title">
+                    <h2>Academic Eligibility</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.01 .jpeg" alt="Students working in a science laboratory" />
+                    </figure>
+                    <div class="section-body">
+                        <p>Applicants must satisfy one of the officially approved academic conditions. A student may qualify by obtaining 98% (274.5 out of 280) in the Preparatory Certificate without achieving full marks in any of the three core subjects:
+                            Mathematics, Science, and English.</p>
+                        <p>Alternatively, a student may qualify by obtaining 95% (266 out of 280) provided that they have achieved full marks in at least one of the following subjects: Mathematics, Science, or English.</p>
+                        <p>These score thresholds are determined each academic year and may vary in accordance with national admission regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- NATIONALITY REQUIREMENT SECTION -->
+    <content-section class="reveal" id="nationality-requirement">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div class="section-title">
+                    <h2>Nationality Requirement</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.02 .jpeg" alt="Official documents and passport on a desk" />
+                    </figure>
+                    <div class="section-body">
+                        <p>Admission is restricted to Egyptian nationals. All applicants must provide official documentation verifying nationality as part of the application process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- EDUCATIONAL BACKGROUND SECTION -->
+    <content-section class="reveal" id="educational-background">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div class="section-title">
+                    <h2>Educational Background</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.03 .jpeg" alt="Classroom scene with books and students" />
+                    </figure>
+                    <div class="section-body">
+                        <p>Students holding the General Preparatory Certificate must meet the previously stated academic requirements.</p>
+                        <p>Students graduating from Al-Azhar preparatory institutes are required to achieve the equivalent qualifying total, calculated based on performance in five principal subjects: Science, Mathematics, English, Arabic, and Social Studies.</p>
+                        <p>Applicants who have completed their preparatory education abroad must undergo an official academic equivalency process to ensure compliance with national standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- TUITION STRUCTURE SECTION -->
+    <content-section class="reveal" id="tuition-structure">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <div class="section-title">
+                    <h2>Tuition Structure</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.04.jpeg" alt="Tuition and finance documents in academic setting" />
+                    </figure>
+                    <div class="section-body">
+                        <p>STEM Schools operate under a partially subsidized financial model. Tuition obligations vary according to the applicant's previous school classification.</p>
+                        <p>Students transferring from government Arabic or experimental language schools are required to pay an annual tuition fee of 5,000 EGP, representing a portion of the total educational cost, with the remaining amount funded by the
+                            state.
+                        </p>
+                        <p>Students previously enrolled in private schools are required to pay tuition equivalent to the fees of their former institution.</p>
+                        <p>Students transferring from national or international schools are required to pay 30,000 EGP annually.</p>
+                        <p>All fees are subject to official regulation and may be adjusted when necessary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- APPLICATION AND SCHOOL PREFERENCES SECTION -->
+    <content-section class="reveal" id="application">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <div class="section-title">
+                    <h2>Application and School Preferences</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.05 .jpeg" alt="Student applying online at a computer" />
+                    </figure>
+                    <div class="section-body">
+                        <p>Eligible students must submit the required documents, including the official electronic certificate, through the designated application platform during the announced submission period.</p>
+                        <p>Applicants are required to rank their preferred schools from a total of 23 STEM schools nationwide. It is important to note that certain schools are designated exclusively for boys, others exclusively for girls, while some operate
+                            as co-educational institutions. Applicants are responsible for reviewing each school's designation before confirming their preference order.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- ADMISSION EXAMINATION SECTION -->
+    <content-section class="reveal" id="examination">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <div class="section-title">
+                    <h2>Admission Examination</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.06.jpeg" alt="Students taking an examination in a hall" />
+                    </figure>
+                    <div class="section-body">
+                        <p>All eligible applicants must sit for the official STEM Admission Examination. The assessment evaluates proficiency in Science, Mathematics, and English, in addition to measuring intelligence, logical reasoning, and analytical aptitude.</p>
+                        <p>Candidates must achieve a minimum score above the 50% threshold in order to qualify for further consideration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- SELECTION AND PLACEMENT SECTION -->
+    <content-section class="reveal" id="selection">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">07</div>
+                <div class="section-title">
+                    <h2>Selection and Placement</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.09.jpeg" alt="Ranking and placement charts with certificates" />
+                    </figure>
+                    <div class="section-body">
+                        <p>Following the examination, applicants are ranked nationally according to their total admission test score. Final acceptance is determined based on ranking, institutional capacity, and the applicant's ordered school preferences.</p>
+                        <p>In 2025, the total number of admitted students ranged between 2,000 and 2,500 nationwide, although this figure remains subject to adjustment based on annual policy decisions.</p>
+                        <p>Placement in a specific school depends on the candidate's score, national ranking, and the availability of seats within their selected preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- FINAL ENROLLMENT PROCEDURES SECTION -->
+    <content-section class="reveal" id="enrollment">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">08</div>
+                <div class="section-title">
+                    <h2>Final Enrollment Procedures</h2>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-card" tabindex="0">
+                    <figure class="section-figure">
+                        <img src="Section.08 .jpeg" alt="Official enrollment signing at a university office" />
+                    </figure>
+                    <div class="section-body">
+                        <p>Students who receive official acceptance must complete the enrollment process by submitting all required original documents within the designated timeframe. Failure to finalize documentation may result in cancellation of admission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content-section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Ministry of Education</p>
+        <small>&copy; 2026 STEM School – Behera. All rights reserved.</small>
+    </footer>
+
+    <script>
+        // Internal navigation: smooth scroll + active highlight (no gold animation)
+        const navLinks = document.querySelectorAll('.nav-menu-item');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 120) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Update active nav on scroll
+        const sections = document.querySelectorAll('content-section');
+
+        function updateActive() {
+            let current = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.25) current = section.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href').slice(1) === current);
+            });
+        }
+        window.addEventListener('scroll', updateActive);
+        updateActive();
+
+        // Click behavior for section cards: toggle selected border and mark section selected for heading underline
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // remove selected from other cards and sections
+                document.querySelectorAll('.section-card').forEach(c => c.classList.remove('selected'));
+                document.querySelectorAll('content-section').forEach(s => s.classList.remove('selected'));
+                // remove figure-selected from all figures
+                document.querySelectorAll('.section-figure').forEach(f => f.classList.remove('figure-selected'));
+                // add selected to this card and its parent section
+                this.classList.add('selected');
+                const section = this.closest('content-section');
+                if (section) section.classList.add('selected');
+                // add figure-selected to this card's figure (trigger underline animation)
+                const fig = this.querySelector('.section-figure');
+                if (fig) {
+                    // force reflow to ensure animation restarts if needed
+                    fig.classList.remove('figure-selected');
+                    void fig.offsetWidth;
+                    fig.classList.add('figure-selected');
+                }
+            });
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') this.click();
+            });
+            // allow clicking the figure to select the card (and show the thin black border)
+            const fig = card.querySelector('.section-figure');
+            if (fig) {
+                fig.style.cursor = 'pointer';
+                fig.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    card.click();
+                });
+                fig.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            }
+        });
+
+        // Make section titles clickable to scroll to section and select the section
+        document.querySelectorAll('.section-title h2').forEach(h => {
+            h.style.cursor = 'pointer';
+            h.addEventListener('click', function() {
+                const section = this.closest('content-section');
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // remove selected states
+                    document.querySelectorAll('.section-card').forEach(c => c.classList.remove('selected'));
+                    document.querySelectorAll('content-section').forEach(s => s.classList.remove('selected'));
+                    // add selected to this section and its first card
+                    section.classList.add('selected');
+                    const card = section.querySelector('.section-card');
+                    if (card) card.classList.add('selected');
+                }
+            });
+        });
+    </script>
+    <script src="../main.js"></script>
+
+</body>
+
+</html>

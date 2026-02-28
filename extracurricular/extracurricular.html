@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracurricular Life | STEM School – Behera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Merriweather:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="extracurricular.css">
+    <style>
+        /* Smooth loading animation */
+        
+        @keyframes pageLoad {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        body {
+            animation: pageLoad 0.4s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar solid" role="navigation">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">STEM School – Behera</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="harvard-backdrop" hidden></div>
+    <aside class="harvard-menu" aria-hidden="true">
+        <nav class="harvard-nav" aria-label="Main navigation">
+            <ul class="harvard-list">
+                <li class="menu-item">
+                    <a href="../index.html" class="menu-main-link">STEM School – Behera</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../circullum2/index.html" class="menu-main-link">Academics</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../admissions/index.html" class="menu-main-link">Admissions</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">Campus Life</button>
+                    <ul class="submenu">
+                        <li><a href="../campus-life/index.html">Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="extracurricular.html" class="menu-main-link">Extracurricular</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">About</button>
+                    <ul class="submenu">
+                        <li><a href="../about/history.html">History</a></li>
+                        <li><a href="../team/index.html">Our Team</a></li>
+                        <li><a href="../care-services/index.html">Care Services</a></li>
+                        <li><a href="../care/index.html">Who We Are</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- SECTION 1: HERO HEADER -->
+    <!-- Add your STEM Behera images to images/extracurricular/ with these filenames:
+            stem-behera-hero.jpg
+            stem-behera-club1.jpg .. stem-behera-club6.jpg
+            stem-behera-global.jpg
+            stem-behera-competition.jpg
+            stem-behera-volunteering.jpg
+        -->
+    <section class="hero" style="background-image: linear-gradient(rgba(11, 31, 58, 0.5), rgba(11, 31, 58, 0.6)), url('images/extracurricular/stem-behera-hero.jpg');">
+        <div class="hero-content">
+            <h1 class="hero-title" data-animate="slideInLeft">Extracurricular Life</h1>
+            <p class="hero-subtitle" data-animate="fadeInUp">Opportunities that develop leadership, innovation, collaboration, and real-world experience beyond the classroom.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: STUDENT CLUBS -->
+    <section class="clubs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student Clubs</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="clubs-grid">
+                <!-- Club 1 -->
+                <div class="club-card fade-in">
+                    <div class="club-image" style="background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80'), url('images/extracurricular/stem-behera-club1.jpg');"></div>
+                    <div class="club-content">
+                        <h3 class="club-name">Research Council</h3>
+                        <p class="club-description">Student-led initiatives exploring scientific inquiry | experimental design | advancing knowledge across disciplines.</p>
+                        <a href="#" class="club-link">Learn more →</a>
+                    </div>
+                </div>
+
+                <!-- Club 2 -->
+                <div class="club-card fade-in">
+                    <div class="club-image" style="background-image: url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80'), url('images/extracurricular/stem-behera-club2.jpg');"></div>
+                    <div class="club-content">
+                        <h3 class="club-name">Debate | Leadership Club</h3>
+                        <p class="club-description">Develops critical thinking | public speaking | leadership skills through rigorous debate and collaborative decision-making.</p>
+                        <a href="#" class="club-link">Learn more →</a>
+                    </div>
+                </div>
+
+                <!-- Club 3 -->
+                <div class="club-card fade-in">
+                    <div class="club-image" style="background-image: url('https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80'), url('images/extracurricular/stem-behera-club3.jpg');"></div>
+                    <div class="club-content">
+                        <h3 class="club-name">Volunteering | Community Club</h3>
+                        <p class="club-description">Organizes service projects | community engagement | fostering responsibility and meaningful social impact.</p>
+                        <a href="#" class="club-link">Learn more →</a>
+                    </div>
+                </div>
+
+                <!-- Club 4 -->
+                <div class="club-card fade-in">
+                    <div class="club-image" style="background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80'), url('images/extracurricular/stem-behera-club4.jpg');"></div>
+                    <div class="club-content">
+                        <h3 class="club-name">Entrepreneurship | Career Club</h3>
+                        <p class="club-description">Explores business innovation | professional development | pathways to academic and entrepreneurial success.</p>
+                        <a href="#" class="club-link">Learn more →</a>
+                    </div>
+                </div>
+
+                <!-- Club 5 -->
+                <div class="club-card fade-in">
+                    <div class="club-image" style="background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80'), url('images/extracurricular/stem-behera-club5.jpg');"></div>
+                    <div class="club-content">
+                        <h3 class="club-name">Psychology | Life Skills Club</h3>
+                        <p class="club-description">Explores human behavior | well-being | develops essential skills for personal and professional development.</p>
+                        <a href="#" class="club-link">Learn more →</a>
+                    </div>
+                </div>
+
+                <!-- Club 6 -->
+                <div class="club-card fade-in">
+                    <div class="club-image" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80'), url('images/extracurricular/stem-behera-club6.jpg');"></div>
+                    <div class="club-content">
+                        <h3 class="club-name">Physical Education Club</h3>
+                        <p class="club-description">Promotes athletic excellence | wellness | teamwork through organized sports and fitness initiatives.</p>
+                        <a href="#" class="club-link">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: STUDENT DEVELOPMENT PROGRAMS -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">STEM Programs</h2>
+                <div class="title-underline"></div>
+            </div>
+            <p class="section-intro">STEM School – Behera offers a comprehensive range of specialized programs designed to develop advanced skills and prepare students for future careers in science, technology, engineering, and mathematics.</p>
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-icon">🔬</div>
+                    <h3>Advanced Research Program</h3>
+                    <p>Independent research projects under faculty mentorship, culminating in publications and presentations.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">🤖</div>
+                    <h3>Robotics & Automation</h3>
+                    <p>Design, build, and program autonomous systems for real-world applications.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">💻</div>
+                    <h3>Computer Science & AI</h3>
+                    <p>Programming, algorithms, machine learning, and software engineering fundamentals.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">⚡</div>
+                    <h3>Engineering Innovation</h3>
+                    <p>Problem-solving through design thinking, prototyping, and engineering principles.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">🧬</div>
+                    <h3>Biotechnology & Life Sciences</h3>
+                    <p>Genetic engineering, bioinformatics, and medical research methodologies.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">🚀</div>
+                    <h3>Aerospace Engineering</h3>
+                    <p>Aeronautics, astronautics, and space systems design and analysis.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">🌍</div>
+                    <h3>Environmental Science</h3>
+                    <p>Sustainability, climate science, and ecological research and solutions.</p>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon">📊</div>
+                    <h3>Data Science & Analytics</h3>
+                    <p>Statistical analysis, data visualization, and predictive modeling techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SCHOLARSHIP OPPORTUNITIES -->
+    <section class="scholarship-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Scholarship Opportunities</h2>
+                <div class="title-underline"></div>
+            </div>
+            <p class="section-intro">The school provides information and guidance on the following international and national scholarship pathways available to our graduating students.</p>
+            <div class="scholarship-grid">
+                <div class="scholarship-item fade-in">
+                    <h4>Egyptian Government Excellence Scholarships</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>Ministry of Higher Education International Scholarships</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>USAID Scholarships</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>DAAD | German Academic Exchange Service</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>MEXT | Japan Scholarship Program</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>Erasmus+ Opportunities</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>African Leadership Scholarships</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>International University Merit Scholarships</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>STEM Excellence Grants</h4>
+                </div>
+                <div class="scholarship-item fade-in">
+                    <h4>Private Academic Achievement Scholarships</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: GLOBAL EXPOSURE | EXCHANGE -->
+    <section class="global-section" style="background: #111; color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Global Exposure | Exchange</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="global-grid">
+                <div class="global-content fade-in">
+                    <h3>International Academic Engagement</h3>
+                    <p>Students participate in diverse programs that expand their academic perspectives and build global competence.</p>
+                    <ul class="global-list">
+                        <li>Virtual Exchange Programs</li>
+                        <li>International STEM Competitions</li>
+                        <li>Global Online Research Collaboration</li>
+                        <li>Cultural Exchange Partnerships</li>
+                        <li>International Science Fairs</li>
+                        <li>Summer Research Programs Abroad</li>
+                        <li>Global Innovation Challenges</li>
+                        <li>Model United Nations Participation</li>
+                        <li>International University Outreach Programs</li>
+                        <li>Cross-Cultural Academic Workshops</li>
+                    </ul>
+                </div>
+                <div class="global-image fade-in" style="background-image: url('https://images.unsplash.com/photo-1465101178521-c1a9136a3b41?auto=format&fit=crop&w=900&q=80'), url('images/extracurricular/stem-behera-global.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: COMPETITIONS | SCIENTIFIC EVENTS -->
+    <section class="competitions-section" style="background: #0b1f3a; color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Competitions | Scientific Events</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="competitions-content">
+                <div class="comp-text fade-in">
+                    <p>STEM School – Behera students demonstrate academic excellence and research innovation through participation in regional and international competitions. Our students engage in:</p>
+                    <ul class="comp-list">
+                        <li>Science Fairs and Research Exhibitions</li>
+                        <li>Robotics and Engineering Competitions</li>
+                        <li>Innovation and Product Design Contests</li>
+                        <li>STEM Olympiads and Challenges</li>
+                        <li>Academic Research Conferences</li>
+                    </ul>
+                    <p>These competitions provide opportunities to showcase scholarly work, receive expert feedback, and gain recognition for intellectual achievement.</p>
+                </div>
+                <div class="comp-image fade-in" style="background-image: url('images/extracurricular/stem-behera-competition.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: COMMUNITY ENGAGEMENT -->
+    <section class="community-section" style="background: #b71c1c; color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Community Impact</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="community-content">
+                <div class="community-image fade-in" style="background-image: url('images/extracurricular/stem-behera-volunteering.jpg');"></div>
+                <div class="community-text fade-in">
+                    <p>Student responsibility extends beyond the classroom. Our students actively engage with their community through organized initiatives:</p>
+                    <ul class="community-list">
+                        <li>Environmental and Conservation Campaigns</li>
+                        <li>Public Health and Awareness Programs</li>
+                        <li>Educational Outreach to Younger Students</li>
+                        <li>Local Volunteer and Service Projects</li>
+                        <li>Civic Leadership and Advocacy Initiatives</li>
+                    </ul>
+                    <p>These experiences cultivate social responsibility, deepen understanding of real-world challenges, and prepare students to contribute meaningfully to society.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER: spacing removed to tighten margin -->
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <h3>STEM School | Behera</h3>
+                <p class="footer-tag">Extracurricular Life | Leadership | Research | Global Preparation</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Student Clubs</a></li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="#">Scholarship Opportunities</a></li>
+                    <li><a href="#">Global Exchange</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <p>Advising Office | contact@stembehera.edu.eg</p>
+                <p>Behera, Egypt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">© STEM School | Behera — All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Advanced scroll-based animations
+        const observerOptions = {
+            threshold: 0.12,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Add individual stagger animation for nested elements
+                    const children = entry.target.querySelectorAll('[class*="fade-in"]');
+                    children.forEach((child, index) => {
+                        child.style.animation = `fadeInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`;
+                        child.style.animationDelay = `${index * 0.08}s`;
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll enhancement for navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add scroll event listener for parallax and scroll-based effects
+            let ticking = false;
+            let lastScrollY = 0;
+
+            const handleScroll = () => {
+                lastScrollY = window.scrollY;
+                ticking = false;
+            };
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(handleScroll);
+                }
+            }, {
+                passive: true
+            });
+
+            // Add hover effects enhancement
+            const cards = document.querySelectorAll('.club-card, .program-card, .scholarship-item');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                });
+            });
+
+            // Image loading effect
+            const images = document.querySelectorAll('[style*="background-image"]');
+            images.forEach(img => {
+                img.style.backgroundSize = 'cover';
+                img.style.backgroundPosition = 'center';
+            });
+        });
+
+        // Prevent animation flicker
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupAnimations);
+        } else {
+            setupAnimations();
+        }
+
+        function setupAnimations() {
+            // Initialize all animations when DOM is ready
+            const animatedElements = document.querySelectorAll('[class*="fade-in"]');
+            animatedElements.forEach((el, index) => {
+                if (!el.classList.contains('visible')) {
+                    const baseDelay = (index % 6) * 0.1;
+                    el.style.animationDelay = `${baseDelay}s`;
+                }
+            });
+        }
+    </script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

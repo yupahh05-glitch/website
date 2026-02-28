@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>History — STEM School – Behera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+            line-height: 1.6;
+            color: #222;
+            background: #fff;
+            margin: 0;
+            padding: 0
+        }
+        
+        header {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #0B1F3A;
+            margin-bottom: 8px
+        }
+        
+        p.lead {
+            color: #555;
+            margin-bottom: 24px
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 40px;
+        }
+        /* History section - institutional, formal, Harvard-inspired */
+        
+        .history-section {
+            background: #ffffff;
+            color: #222;
+            padding: 48px 20px;
+            margin: 40px auto
+        }
+        
+        .history-inner {
+            max-width: 920px;
+            margin: 0 auto
+        }
+        
+        .history-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #0B1F3A;
+            text-align: center;
+            margin-bottom: 8px;
+            line-height: 1.05
+        }
+        
+        .history-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 28px;
+            font-weight: 300
+        }
+        
+        .history-paragraph {
+            color: #222;
+            text-align: justify;
+            line-height: 1.85;
+            margin-bottom: 14px;
+            font-size: 16px
+        }
+        
+        .history-subheading {
+            color: #0B1F3A;
+            font-size: 32px;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: baseline;
+            gap: 20px
+        }
+        
+        .history-subheading-number {
+            font-size: 72px;
+            font-weight: 300;
+            color: #0B1F3A;
+            font-family: 'Playfair Display', serif;
+            line-height: 0.8;
+            opacity: 0.95
+        }
+        
+        .history-subheading-text {
+            flex: 1;
+            line-height: 1.2
+        }
+        
+        .history-timeline {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px 28px;
+            align-items: start;
+            margin-top: 18px
+        }
+        
+        .history-year {
+            color: #777;
+            font-weight: 700;
+            font-size: 14px;
+            padding-top: 6px
+        }
+        
+        .history-event {
+            color: #222;
+            font-size: 15px;
+            padding-bottom: 10px
+        }
+        
+        .history-event strong {
+            font-weight: 600;
+            color: #0B1F3A
+        }
+        
+        .section-image {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            max-width: 600px;
+            margin: 25px auto 32px;
+            display: block;
+            border-radius: 4px;
+            object-fit: contain
+        }
+        /* Premium Harvard-Inspired Section Styling */
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .premium-section-header {
+            position: relative;
+            text-align: center;
+            margin: 64px 0 48px;
+            padding: 40px 20px
+        }
+        
+        .premium-section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C9A227, transparent)
+        }
+        
+        .premium-section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C9A227, transparent)
+        }
+        
+        .premium-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 96px;
+            font-weight: 300;
+            color: #A51C30;
+            margin: 0 0 -32px 0;
+            line-height: 1
+        }
+        
+        .premium-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #000;
+            font-weight: 700;
+            margin: 32px 0 16px 0;
+            letter-spacing: -0.5px
+        }
+        
+        .premium-title-underline {
+            width: 120px;
+            height: 3px;
+            background: #C9A227;
+            margin: 20px auto 0
+        }
+        
+        .premium-paragraph {
+            color: #333;
+            text-align: justify;
+            line-height: 1.9;
+            margin-bottom: 24px;
+            font-size: 16px;
+            font-weight: 300
+        }
+        
+        .premium-timeline {
+            position: relative;
+            padding: 60px 0;
+            margin-top: 50px
+        }
+        
+        .premium-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #C9A227
+        }
+        
+        .premium-timeline-item {
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards
+        }
+        
+        .premium-timeline-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .premium-timeline-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .premium-timeline-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        
+        .premium-timeline-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        
+        .premium-timeline-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        
+        .premium-timeline-item:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+        
+        .premium-timeline-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+        
+        .premium-timeline-item:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+        
+        .premium-timeline-item:nth-child(9) {
+            animation-delay: 0.9s;
+        }
+        
+        .premium-timeline-item:nth-child(10) {
+            animation-delay: 1s;
+        }
+        
+        .premium-timeline-item:nth-child(odd) {
+            margin-right: 51%;
+            text-align: right;
+        }
+        
+        .premium-timeline-item:nth-child(even) {
+            margin-left: 51%;
+            text-align: left;
+        }
+        
+        .premium-timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #C9A227;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #C9A227
+        }
+        
+        .premium-timeline-card {
+            background: #fff;
+            border: 2px solid #C9A227;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            margin-top: -10px
+        }
+        
+        .premium-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #A51C30;
+            margin-bottom: 8px
+        }
+        
+        .premium-event {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.7;
+            font-weight: 300
+        }
+        
+        .premium-event strong {
+            font-weight: 600;
+            color: #000
+        }
+        
+        .decree-highlight {
+            background: #1a1a1a;
+            border: 3px solid #C9A227;
+            padding: 32px 28px;
+            margin: 36px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: inset 0 0 0 1px #C9A227
+        }
+        
+        .decree-highlight::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            border-top: 2px solid #C9A227;
+            border-left: 2px solid #C9A227
+        }
+        
+        .decree-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid #C9A227;
+            border-right: 2px solid #C9A227
+        }
+        
+        .decree-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #C9A227;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase
+        }
+        
+        .premium-watermark {
+            position: relative
+        }
+        
+        .premium-watermark::before {
+            content: 'STEM';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 180px;
+            color: rgba(165, 28, 48, 0.05);
+            font-weight: 300;
+            pointer-events: none;
+            text-align: center;
+            width: 100%;
+            white-space: nowrap;
+            z-index: 0
+        }
+        
+        @media (max-width:768px) {
+            .premium-timeline::before {
+                left: 30px
+            }
+            .premium-timeline-item:nth-child(odd),
+            .premium-timeline-item:nth-child(even) {
+                margin: 0 0 50px 70px;
+                text-align: left
+            }
+            .premium-timeline-marker {
+                left: 30px
+            }
+            .premium-number {
+                font-size: 64px;
+                margin-bottom: -24px
+            }
+            .premium-title {
+                font-size: 28px
+            }
+            .decree-highlight::before,
+            .decree-highlight::after {
+                width: 20px;
+                height: 20px;
+                top: -10px;
+                left: -10px;
+                bottom: -10px;
+                right: -10px
+            }
+        }
+        
+        @media (max-width:768px) {
+            body {
+                padding: 0;
+            }
+            .container {
+                padding: 20px 20px;
+            }
+            .history-timeline {
+                grid-template-columns: 1fr
+            }
+            .history-heading {
+                font-size: 26px
+            }
+            .history-subtitle {
+                padding: 0 8px
+            }
+        }
+        /* Hero header with dual background images, smooth fade slider, dark blue overlay */
+        
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            45% {
+                opacity: 1;
+            }
+            60% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes scrollLineGlow {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+        
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-image-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        
+        .hero-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            animation: fadeInOut 8s infinite;
+        }
+        
+        .hero-image:nth-child(1) {
+            background-image: url('head1.jpeg');
+            animation-delay: 0s;
+        }
+        
+        .hero-image:nth-child(2) {
+            background-image: url('head2.jpeg');
+            animation-delay: 4s;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.85), rgba(197, 162, 39, 0.15));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: -1px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .scroll-indicator::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 3px;
+            animation: scrollLineGlow 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar solid" role="navigation">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">STEM School – Behera</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="harvard-backdrop" hidden></div>
+    <aside class="harvard-menu" aria-hidden="true">
+        <nav class="harvard-nav" aria-label="Main navigation">
+            <ul class="harvard-list">
+                <li class="menu-item">
+                    <a href="../index.html" class="menu-main-link">STEM School – Behera</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../circullum2/index.html" class="menu-main-link">Academics</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../admissions/index.html" class="menu-main-link">Admissions</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">Campus Life</button>
+                    <ul class="submenu">
+                        <li><a href="../campus-life/index.html">Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="../extracurricular/extracurricular.html" class="menu-main-link">Extracurricular</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">About</button>
+                    <ul class="submenu">
+                        <li><a href="history.html">History</a></li>
+                        <li><a href="../team/index.html">Our Team</a></li>
+                        <li><a href="../care-services/index.html">Care Services</a></li>
+                        <li><a href="../care/index.html">Who We Are</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="hero" role="banner">
+            <div class="hero-image-slider">
+                <div class="hero-image"></div>
+                <div class="hero-image"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">History</h1>
+            </div>
+            <div class="scroll-indicator" aria-label="Scroll to continue reading" role="button" tabindex="0"></div>
+        </div>
+    </header>
+    <main class="container">
+        <!-- History section -->
+        <section class="history-section" id="history">
+            <div class="history-inner">
+                <h2 style="font-family:'Playfair Display',serif;font-size:48px;color:#0B1F3A;margin-bottom:48px;text-align:center;border-bottom:3px solid #C9A227;padding-bottom:24px;">History of STEM Schools in Egypt</h2>
+
+                <h3 class="history-subheading"><span class="history-subheading-number">1</span><span class="history-subheading-text">Institutional Origins and Expansion</span></h3>
+
+                <p class="history-paragraph">In 2011, through <strong>Ministerial Decree No. 369</strong>, Egypt established STEM schools as dedicated institutions for academically gifted students. The first school opened in 6th of October City in 2011 with support from a <strong>USAID grant of 124 million USD</strong>.
+                    The model was grounded in interdisciplinary, research-based learning designed to expose students to cutting-edge inquiry and applied investigation. What began as a carefully designed pilot quickly demonstrated measurable success in
+                    student achievement and teacher development.</p>
+
+                <p class="history-paragraph">The early years focused on curriculum development, professional learning for educators, and establishing rigorous laboratory standards. International partnerships and collaboration with Egyptian universities ensured that teaching methods
+                    were both academically sound and culturally appropriate. By 2020, full administrative responsibility transitioned from USAID to the Egyptian Ministry of Education, signaling institutional maturity and national ownership. Today, all
+                    STEM schools operate under the Central Unit for STEM and Gifted Schools Affairs, which provides unified governance, quality oversight, and strategic direction.</p>
+
+                <img src="77.jpg" alt="Classroom environment showcasing collaborative STEM learning" class="section-image">
+
+                <h3 class="history-subheading"><span class="history-subheading-number">2</span><span class="history-subheading-text">Academic Framework</span></h3>
+
+                <p class="history-paragraph">STEM schools operate on a research-based educational model grounded in collaborative learning and applied investigation. Students engage in <strong>project-based inquiry</strong>, working in small cohorts to solve real-world problems through
+                    disciplinary and interdisciplinary lenses. Classes are intentionally limited to 25 students, ensuring personalized attention and rich dialogue. The curriculum balances rigorous theoretical instruction with hands-on laboratory work,
+                    emphasizing the connection between abstract concepts and practical application.</p>
+
+                <p class="history-paragraph">This foundational model has remained consistent across all schools and years, with only minor curriculum adjustments made to reflect pedagogical advances and evolving educational standards. The constancy of structure ensures that every
+                    STEM school graduate meets equivalent learning outcomes regardless of geographic location.</p>
+
+                <h3 class="history-subheading"><span class="history-subheading-number">3</span><span class="history-subheading-text">Assessment Developments and 2025 Reforms</span></h3>
+
+                <p class="history-paragraph">In 2025, STEM schools implemented refined assessment protocols to better capture student learning across multiple dimensions. The updated framework allocates <strong>10% to individual written presentations</strong>, recognizing the importance
+                    of communication and public scholarship. An additional <strong>10% derives from individual student logbooks</strong>, which document learning processes and metacognitive reflection. For journal-based assessment, schools now count the
+                    <strong>best three journals out of five submitted</strong>, replacing the previous system of including all four journals. This change allows for greater flexibility while maintaining rigor and encouraging students to prioritize quality
+                    of inquiry over quantity of submissions.</p>
+
+                <h3 class="history-subheading"><span class="history-subheading-number">4</span><span class="history-subheading-text">Institutional Governance and Future Direction</span></h3>
+
+                <p class="history-paragraph">Today, STEM schools in Egypt operate as a coordinated national system under the Central Unit for STEM and Gifted Schools Affairs. The network continues to expand, bringing transformative science education to additional governorates while
+                    maintaining the pedagogical principles established in 2011. Quality assurance, curriculum coherence, and teacher professional development remain central to institutional operations. Looking forward, STEM schools remain committed to
+                    their founding mission: fostering intellectual rigor, nurturing creative problem-solving, and preparing Egypt's most capable students to lead in science, technology, engineering, and mathematics. The interdisciplinary philosophy that
+                    shaped the first cohorts continues to guide all new initiatives, ensuring that STEM schools maintain their character as centers of academic excellence and innovative pedagogy.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 STEM School – Behera. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../main.js"></script>
+</body>
+
+</html>

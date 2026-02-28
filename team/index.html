@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | STEM School – Behera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+            line-height: 1.6;
+            color: #222;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            width: 100%;
+            margin: 0;
+        }
+        
+        main {
+            padding: 60px 40px;
+        }
+        /* Hero Section */
+        
+        .hero-section {
+            background: url('../Our team/The header of this page.jpeg') center/cover no-repeat;
+            background-color: #f8f9fa;
+            padding: 0;
+            height: 100vh;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            width: 100%;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(11, 31, 58, 0.85), 0 1px 0 #222;
+            padding: 0 40px 0 80px;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        /* Mission & Vision Sections */
+        
+        .mission-section,
+        .vision-section {
+            padding: 80px 40px;
+            text-align: left;
+            margin-bottom: 60px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-section {
+            background: linear-gradient(135deg, #0B1F3A 0%, #1a3550 100%);
+            color: #fff;
+            margin-top: 100px;
+        }
+        
+        .vision-section {
+            background: #000;
+            color: #fff;
+        }
+        
+        .mission-section h2,
+        .vision-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .mission-section p,
+        .vision-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+        
+        .team-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0B1F3A;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 25px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #d4a574 0%, #DC143C 100%);
+            border-radius: 2px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            height: 550px;
+            animation: fadeIn 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .team-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .team-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .team-card:nth-child(3) {
+            animation-delay: 0.45s;
+        }
+        
+        .team-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .team-card:hover .profile-img {
+            transform: scale(1.08);
+        }
+        
+        .member-info {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 30px 25px;
+            background: linear-gradient(to top, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.6) 60%, transparent 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .member-role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #d4a574;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .view-link {
+            background: none;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s ease;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+        }
+        
+        .view-link:hover {
+            gap: 12px;
+        }
+        
+        .view-link::after {
+            content: '→';
+        }
+        /* Modal Styles */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #0B1F3A 0%, #DC143C 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-btn:hover {
+            opacity: 0.8;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            main {
+                padding: 40px 20px;
+            }
+            header {
+                width: 100%;
+                margin: 0;
+            }
+            .hero-section {
+                padding: 0;
+                height: 80vh;
+                margin: 0;
+            }
+            .hero-content {
+                padding: 40px 20px;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .team-card {
+                height: 500px;
+            }
+            .mission-section,
+            .vision-section {
+                padding: 60px 20px;
+            }
+            .mission-section h2,
+            .vision-section h2 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar solid" role="navigation">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">STEM School – Behera</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="harvard-backdrop" hidden></div>
+    <aside class="harvard-menu" aria-hidden="true">
+        <nav class="harvard-nav" aria-label="Main navigation">
+            <ul class="harvard-list">
+                <li class="menu-item">
+                    <a href="../index.html" class="menu-main-link">STEM School – Behera</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../circullum2/index.html" class="menu-main-link">Academics</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../admissions/index.html" class="menu-main-link">Admissions</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">Campus Life</button>
+                    <ul class="submenu">
+                        <li><a href="../campus-life/index.html">Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="../extracurricular/extracurricular.html" class="menu-main-link">Extracurricular</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">About</button>
+                    <ul class="submenu">
+                        <li><a href="../about/history.html">History</a></li>
+                        <li><a href="index.html">Our Team</a></li>
+                        <li><a href="../care-services/index.html">Care Services</a></li>
+                        <li><a href="../care/index.html">Who We Are</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <section class="hero-section" role="banner">
+            <div class="hero-content">
+                <h1 class="hero-title">Our Team</h1>
+                <p class="hero-subtitle">Meet the talented developers who brought STEM School – Behera's website to life through collaborative innovation and technical excellence.</p>
+            </div>
+        </section>
+    </header>
+
+    <main class="container">
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>To foster STEM education and innovation through collaborative web development projects that integrate technology with academic learning, empowering students to apply theoretical knowledge in practical, real-world scenarios.</p>
+        </section>
+
+        <!-- Team Members -->
+        <section class="team-section">
+            <h2 class="section-title">Development Team</h2>
+
+            <div class="team-grid">
+                <!-- Team Member 1: Mostafa -->
+                <div class="team-card">
+                    <img src="../Our team/Mostafa Ismail Ragab EL-Gendy.jpeg" alt="Mostafa Ismail Ragab El-Gendy" class="profile-img">
+                    <div class="member-info">
+                        <h3 class="member-name">Mostafa Ismail Ragab El-Gendy</h3>
+                        <p class="member-role">Frontend Developer</p>
+                        <button class="view-link" onclick="showModal('Mostafa Ismail Ragab El-Gendy', 'Responsible for building and styling user interface components using HTML, CSS, and JavaScript. Contributed equally to designing responsive layouts, improving user experience, testing the website, and ensuring visual consistency across all pages.')">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Omar -->
+                <div class="team-card">
+                    <img src="../omar mohamed fathy.jpeg" alt="Omar Mohamed Fathy" class="profile-img">
+                    <div class="member-info">
+                        <h3 class="member-name">Omar Mohamed Fathy</h3>
+                        <p class="member-role">Frontend Developer</p>
+                        <button class="view-link" onclick="showModal('Omar Mohamed Fathy', 'Worked on developing and enhancing the website interface with a focus on clean structure, modern styling, and responsive design. Participated equally in layout creation, interactive features, debugging, and overall front-end optimization.')">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Marwan -->
+                <div class="team-card">
+                    <img src="../Marwn mohamed gibreal.jpeg" alt="Marwan Mohamed Gibreal" class="profile-img">
+                    <div class="member-info">
+                        <h3 class="member-name">Marwan Mohamed Gibreal</h3>
+                        <p class="member-role">Frontend Developer</p>
+                        <button class="view-link" onclick="showModal('Marwan Mohamed Gibreal', 'Contributed to the implementation of the website\'s visual design and functionality. Played an equal role in writing front-end code, refining the user interface, testing performance, and maintaining consistency throughout the project.')">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Team Member 4: Youssef -->
+                <div class="team-card">
+                    <img src="../Our team/Youssef nasser fawzy.jpeg" alt="Youssef Nasser Fawzy" class="profile-img">
+                    <div class="member-info">
+                        <h3 class="member-name">Youssef Nasser Fawzy</h3>
+                        <p class="member-role">Frontend Developer</p>
+                        <button class="view-link" onclick="showModal('Youssef Nasser Fawzy', 'Focused on developing responsive and user-friendly interface elements using front-end technologies. Shared equal responsibility in design decisions, coding, testing, and improving the overall appearance and usability of the website.')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision-section">
+            <h2>Our Vision</h2>
+            <p>To become a leading student-driven initiative in STEM innovation, inspiring future generations through hands-on projects, interdisciplinary collaboration, and the pursuit of excellence in science, technology, engineering, and mathematics.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 STEM School – Behera. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Team Member Details -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Team Member</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+    <script>
+        function showModal(name, details) {
+            const modal = document.getElementById('memberModal');
+            document.getElementById('modalTitle').textContent = name;
+            document.getElementById('modalBody').textContent = details;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('memberModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('memberModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

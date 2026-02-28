@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | STEM Behera</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header */
+        
+        header {
+            background: linear-gradient(135deg, #0B1F3A 0%, #1a3550 100%);
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(11, 31, 58, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .header-nav {
+            display: flex;
+        }
+        
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px 0;
+        }
+        
+        .search-container {
+            display: none;
+        }
+        
+        .search-input {
+            display: none;
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-section {
+            background: url('The header of this page.jpeg') center/cover no-repeat;
+            background-color: #f8f9fa;
+            padding: 60px 40px;
+            min-height: 650px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin-left: 20px;
+        }
+        
+        .hero-title {
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(11, 31, 58, 0.85), 0 1px 0 #222;
+            text-align: left;
+            font-size: 3.5rem;
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-subtitle {
+            color: #f3f3f3;
+            text-shadow: 0 1px 8px rgba(11, 31, 58, 0.7);
+            text-align: left;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        /* Main Content */
+        
+        main {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0B1F3A;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            padding-bottom: 25px;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #d4a574 0%, #A51C30 100%);
+            border-radius: 2px;
+        }
+        /* Team Grid Container */
+        
+        .section-container {
+            max-width: 100%;
+            padding: 80px 40px;
+        }
+        /* Intro Section */
+        
+        .intro-section {
+            background: linear-gradient(135deg, #0B1F3A 0%, #1a3550 100%);
+            color: #fff;
+            padding: 100px 40px;
+            text-align: center;
+        }
+        
+        .intro-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .intro-section p {
+            font-size: 1.05rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        /* Mission & Vision Section */
+        
+        .mission-section,
+        .vision-section {
+            width: 100%;
+            padding: 120px 40px;
+            text-align: left;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .mission-section {
+            background: #0B1F3A;
+            color: #fff;
+        }
+        
+        .vision-section {
+            background: #000;
+            color: #fff;
+        }
+        
+        .mission-section h2,
+        .vision-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+        
+        .mission-section h2 {
+            color: #fff;
+            text-align: center;
+        }
+        
+        .vision-section h2 {
+            color: #fff;
+            text-align: center;
+        }
+        
+        .mission-section p,
+        .vision-section p {
+            font-size: 1rem;
+            line-height: 1.9;
+            max-width: 900px;
+            opacity: 0.95;
+        }
+        
+        .mission-section p {
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .vision-section p {
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        /* Team Grid Container */
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
+            margin: 0 auto 0 auto;
+            max-width: 1150px;
+            padding: 60px 40px;
+            background: transparent;
+        }
+        /* Animations */
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* Team Card */
+        
+        .team-card {
+            background: #0B1F3A;
+            border-radius: 14px;
+            padding: 0;
+            text-align: center;
+            box-shadow: 0 6px 24px rgba(11, 31, 58, 0.12);
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            overflow: hidden;
+            position: relative;
+            height: 440px;
+            animation: slideUp 0.7s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .team-card:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+        
+        .team-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .team-card:nth-child(3) {
+            animation-delay: 0.45s;
+        }
+        
+        .team-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        .team-card:hover {
+            box-shadow: 0 12px 40px rgba(11, 31, 58, 0.2);
+            transform: translateY(-4px);
+        }
+        /* Profile Image */
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+            margin-bottom: 0;
+            flex-shrink: 0;
+            transition: transform 0.6s ease;
+            animation: fadeIn 0.8s ease-out;
+            display: block;
+        }
+        
+        .team-card:hover .profile-img {
+            transform: scale(1.08);
+        }
+        
+        .member-info {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            z-index: 2;
+            height: 28%;
+            background: linear-gradient(to top, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.6) 60%, transparent 100%);
+        }
+        /* Member Info */
+        
+        .member-name {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .member-role {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #d4a574;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .member-bio {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 0;
+            display: none;
+        }
+        
+        .view-link {
+            background: none;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: gap 0.3s ease;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+        }
+        
+        .view-link:hover {
+            gap: 12px;
+        }
+        
+        .view-link::after {
+            content: '→';
+        }
+        /* Footer */
+        
+        footer {
+            background: linear-gradient(135deg, #0B1F3A 0%, #1a3550 100%);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            box-shadow: 0 -4px 12px rgba(11, 31, 58, 0.1);
+        }
+        
+        footer p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        /* Modal */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #0B1F3A 0%, #1a3550 100%);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            animation: slideUp 0.4s ease-out;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+        }
+        
+        .modal-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 0;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        
+        .close-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .modal-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            max-height: 5.4em;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 15px;
+            }
+            .header-title {
+                font-size: 1.2rem;
+            }
+            .search-input {
+                display: none;
+            }
+            .search-container {
+                display: none;
+            }
+            .hero-section {
+                padding: 40px 0;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+            .header-text {
+                font-size: 1rem;
+            }
+            main {
+                padding: 0;
+            }
+            .intro-section {
+                padding: 80px 20px;
+            }
+            .mission-section,
+            .vision-section {
+                padding: 80px 20px;
+            }
+            .mission-section h2,
+            .vision-section h2 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 50px;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 60px 20px;
+            }
+            .team-card {
+                height: 420px;
+            }
+            .profile-img {
+                width: 100%;
+                height: 100%;
+            }
+            .member-info {
+                padding: 30px 25px;
+            }
+            .member-name {
+                font-size: 1.5rem;
+            }
+            .member-role {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 0 20px;
+                flex-wrap: wrap;
+            }
+            .header-title {
+                font-size: 1.5rem;
+                flex-basis: 100%;
+                margin-bottom: 10px;
+            }
+            .header-nav {
+                flex-basis: 100%;
+                width: 100%;
+            }
+            .search-input {
+                display: none;
+            }
+            .search-container {
+                display: none;
+            }
+            .hero-section {
+                padding: 60px 0;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .intro-section {
+                padding: 60px 15px;
+            }
+            .intro-section h2 {
+                font-size: 1.6rem;
+            }
+            .intro-section p {
+                font-size: 0.95rem;
+            }
+            .mission-section,
+            .vision-section {
+                padding: 60px 15px;
+            }
+            .mission-section h2,
+            .vision-section h2 {
+                font-size: 1.5rem;
+            }
+            .mission-section p,
+            .vision-section p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding: 40px 15px;
+            }
+            .team-card {
+                height: 350px;
+            }
+            .profile-img {
+                width: 100%;
+                height: 100%;
+            }
+            .member-info {
+                padding: 25px 20px;
+            }
+            .member-name {
+                font-size: 1.2rem;
+            }
+            .member-role {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header removed as requested -->
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Team</h1>
+            <p class="hero-subtitle">Meet the students behind the STEM Behera project</p>
+        </div>
+    </section>
+
+    <div style="height: 60px;"></div>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <h2>Our Mission</h2>
+        <p>To foster STEM education and innovation through collaborative web development projects that integrate technology with academic learning, empowering students to apply theoretical knowledge in practical, real-world scenarios.</p>
+    </section>
+
+    <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+            <img src="Mostafa Ismail Ragab EL-Gendy.jpeg" alt="Mostafa Ismail Ragab El-Gendy" class="profile-img">
+            <div class="member-info">
+                <h3 class="member-name">Mostafa Ismail Ragab El-Gendy</h3>
+                <p class="member-role">Frontend Developer Header & Navigation</p>
+                <p class="member-bio">Specialized in developing the header section and navigation elements with a focus on responsive design and accessibility. Created a professional navigation bar that maintains visual consistency across all device sizes. Implemented clean,
+                    semantic HTML and optimized CSS for performance and maintainability.</p>
+                <button class="view-link" onclick="showModal('Mostafa Ismail Ragab El-Gendy', 'Mostafa led the development of the header and navigation system, which serves as the primary entry point for all users. His work encompasses responsive design patterns, cross-browser compatibility, and accessibility standards. He utilized Flexbox layouts, media queries, and modern CSS techniques to ensure the navigation adapts seamlessly to tablets, smartphones, and desktop displays. His attention to detail in typography, spacing, and visual hierarchy establishes a strong foundation for the entire website.')">Learn more about Mostafa</button>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+            <img src="omar mohamed fathy.jpeg" alt="Omar Mohamed Fathy" class="profile-img">
+            <div class="member-info">
+                <h3 class="member-name">Omar Mohamed Fathy</h3>
+                <p class="member-role">Frontend Developer Team Grid Layout</p>
+                <p class="member-bio">Led the implementation of the team grid layout and card components with meticulous attention to alignment and spacing. Built a responsive grid system using CSS Grid that elegantly displays team members in a balanced layout. Ensured visual
+                    harmony through consistent padding, margins, and component sizing across all breakpoints.</p>
+                <button class="view-link" onclick="showModal('Omar Mohamed Fathy', 'Omar engineered the core grid system that organizes and displays team member information with visual elegance. His expertise in CSS Grid and Flexbox allowed him to create a layout that adapts dynamically from a 2×2 grid on desktops to a single column on mobile devices. He implemented card hover effects, shadow depths, and transition animations that enhance user interaction without compromising performance. His focus on responsive design ensures the layout remains readable and accessible on all screen sizes.')">Learn more about Omar</button>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+            <img src="Marwn mohamed gibreal.jpeg" alt="Marwan Mohamed Gibreal" class="profile-img">
+            <div class="member-info">
+                <h3 class="member-name">Marwan Mohamed Gibreal</h3>
+                <p class="member-role">Frontend Developer Mission & Vision Sections</p>
+                <p class="member-bio">Developed the Mission and Vision sections with sophisticated styling, color schemes, and centered layouts that enhance visual hierarchy. Implemented responsive design patterns and typography refinements to ensure optimal readability. Managed
+                    color contrast ratios for accessibility while maintaining aesthetic appeal across all viewing contexts.</p>
+                <button class="view-link" onclick="showModal('Marwan Mohamed Gibreal', 'Marwan crafted the Mission and Vision sections that communicate the project\'s core values and aspirations. He selected complementary color palettes, navy blue for Mission and black for Vision, that create visual distinction while maintaining unity with the overall design. His implementation includes centered text layouts, responsive font sizing, and strategic use of whitespace to create a premium, academic appearance. He carefully balanced content hierarchy through typography choices and spacing, ensuring each section commands appropriate attention.')">Learn more about Marwan</button>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card">
+            <img src="Youssef nasser fawzy.jpeg" alt="Youssef Nasser Fawzy" class="profile-img">
+            <div class="member-info">
+                <h3 class="member-name">Youssef Nasser Fawzy</h3>
+                <p class="member-role">Frontend Developer Footer & Overall Polish</p>
+                <p class="member-bio">Crafted the footer section and applied final styling refinements throughout the website for a cohesive visual experience. Ensured consistent typography, spacing, and color schemes by implementing a unified design system. Optimized the
+                    overall visual presentation through careful attention to details like shadows, transitions, and responsive behavior on all devices.</p>
+                <button class="view-link" onclick="showModal('Youssef Nasser Fawzy', 'Youssef served as the design quality assurance lead, ensuring every element of the website meets professional standards. He developed the footer component with proper semantic structure and implemented the site-wide visual polish. His comprehensive understanding of responsive design allowed him to identify and resolve layout inconsistencies across breakpoints. He contributed to color theory decisions, accessibility audits, and performance optimization, delivering a finished product that feels polished, professional, and ready for presentation.')">Learn more about Youssef</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <h2>Our Vision</h2>
+        <p>To become a leading student-driven initiative in STEM innovation, inspiring future generations through hands-on projects, interdisciplinary collaboration, and the pursuit of excellence in science, technology, engineering, and mathematics.</p>
+    </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 STEM School – Behera. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for Team Member Details -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Team Member</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(name, details) {
+            const modal = document.getElementById('memberModal');
+            document.getElementById('modalTitle').textContent = name;
+            document.getElementById('modalBody').textContent = details;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('memberModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function searchTeamMembers() {
+            // Functionality removed as per user request
+        }
+
+        const searchInput = document.querySelector('.search-input');
+        if (searchInput) {
+            searchInput.removeEventListener('input', searchTeamMembers);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('memberModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,790 @@
+/* ===============================================
+   GLOBAL STYLES & TYPOGRAPHY
+   =============================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #1a2744;
+    --accent-color: #1a2744;
+    --background-light: #ffffff;
+    --background-alt: #f5f5f5;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-light: #666666;
+    --border-color: #d0d0d0;
+    --spacing-unit: 8px;
+    --dark-blue: #1a2744;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+
+/* Typography */
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.intro-text {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.8;
+}
+
+
+/* ===============================================
+   LAYOUT & CONTAINERS
+   =============================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.alternate-bg {
+    background-color: var(--background-alt);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 24px;
+    }
+    .section {
+        padding: 60px 0;
+    }
+}
+
+
+/* ===============================================
+   HERO SECTION
+   =============================================== */
+
+.hero-section {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #000000 0%, #1a2744 100%);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('header.jpeg') center/cover no-repeat;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.hero-content {
+    z-index: 1;
+    animation: fadeInUp 0.9s ease-out 0.3s backwards;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 52px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 350px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+    }
+}
+
+
+/* ===============================================
+   SECTION HEADERS
+   =============================================== */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header-line {
+    width: 60px;
+    height: 3px;
+    background: #1a2744;
+    margin: 16px auto 0;
+}
+
+
+/* ===============================================
+   CAMPUS OVERVIEW
+   =============================================== */
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.overview-text {}
+
+.overview-image {}
+
+.overview-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.area-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.area-card:hover {
+    border-color: #1a2744;
+    box-shadow: 0 12px 32px rgba(26, 39, 68, 0.15);
+    transform: translateY(-6px);
+    background: #fafafa;
+}
+
+.area-card h3 {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.area-card p {
+    font-size: 15px;
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===============================================
+   CONTENT GRID (Two-column layout)
+   =============================================== */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.content-left {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.content-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.content-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .content-left,
+    .content-right {
+        animation: fadeInUp 0.8s ease-out;
+    }
+}
+
+
+/* ===============================================
+   FEATURES LIST (Harvard Style - No Bullets)
+   =============================================== */
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-text h4 {
+    margin-bottom: 8px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.feature-text p {
+    font-size: 15px;
+    color: var(--text-light);
+    margin: 0;
+}
+
+
+/* ===============================================
+   LABS SECTION
+   =============================================== */
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 60px 0;
+}
+
+.lab-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.lab-card:hover {
+    border-color: #1a2744;
+    box-shadow: 0 16px 36px rgba(26, 39, 68, 0.18);
+    transform: translateY(-8px);
+    background: #fafafa;
+}
+
+.lab-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.lab-card h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #000000;
+}
+
+.lab-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.lab-images {
+    margin: 60px 0 0 0;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.lab-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .labs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .lab-card {
+        padding: 24px 18px;
+    }
+}
+
+
+/* ===============================================
+   OUTDOOR & FACILITIES SECTIONS
+   =============================================== */
+
+.facilities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 32px;
+}
+
+.facility-item {
+    padding: 24px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.facility-item:last-child {
+    border-bottom: none;
+}
+
+.facility-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.facility-item p {
+    color: var(--text-light);
+    font-size: 15px;
+    margin: 0;
+}
+
+.facility-note {
+    background: white;
+    border-left: none;
+    padding: 24px;
+    border-radius: 0;
+    border: 1px solid #d0d0d0;
+    margin-top: 28px;
+}
+
+.facility-note p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+
+/* ===============================================
+   RESIDENTIAL FEATURES
+   =============================================== */
+
+.residential-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.harvard-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 40px 32px 32px 32px;
+    display: flex;
+    align-items: flex-start;
+    min-height: 220px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+}
+
+.harvard-card:hover {
+    border-color: #1a2744;
+    box-shadow: 0 16px 40px rgba(26, 39, 68, 0.16);
+    transform: translateY(-4px);
+}
+
+.harvard-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.harvard-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
+}
+
+.harvard-card-body {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .residential-features {
+        grid-template-columns: 1fr;
+    }
+    .harvard-card {
+        padding: 32px 18px 24px 18px;
+    }
+}
+
+
+/* ===============================================
+   COMMUNITY SECTION
+   =============================================== */
+
+.community-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.community-stats {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin: 60px 0;
+}
+
+.lab-card.harvard-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 40px 32px 32px 32px;
+    display: flex;
+    align-items: flex-start;
+    min-height: 180px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+}
+
+.lab-card.harvard-card:hover {
+    border-color: #1a2744;
+    box-shadow: 0 16px 40px rgba(26, 39, 68, 0.16);
+    transform: translateY(-4px);
+}
+
+.harvard-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.harvard-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+}
+
+.harvard-card-body {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .labs-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .lab-card.harvard-card {
+        padding: 32px 18px 24px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.purpose-content {
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.purpose-content p {
+    margin-bottom: 24px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+}
+
+.purpose-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+
+.footer {
+    background: linear-gradient(135deg, #1a2744 0%, #0b1f3a 100%);
+    color: white;
+    padding: 60px 0 40px 0;
+    text-align: center;
+    margin-top: 100px;
+    border-top: 2px solid #1a2744;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.footer p {
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer p:first-child {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+
+/* ===============================================
+   ANIMATIONS
+   =============================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Intersection Observer for scroll animations */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-fade {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.overview-text,
+.overview-image {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.overview-text.visible,
+.overview-image.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 42px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    .labs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    body {
+        font-size: 16px;
+    }
+    .intro-text {
+        font-size: 16px;
+    }
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-card {
+        padding: 32px 24px;
+    }
+    .stat-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .section {
+        padding: 50px 0;
+    }
+    .hero-section {
+        height: 280px;
+    }
+    .hero-title {
+        font-size: 24px;
+    }
+    .feature-item,
+    .facility-item {
+        padding: 16px;
+    }
+    .stat-card {
+        padding: 24px 16px;
+    }
+    .stat-number {
+        font-size: 32px;
+    }
+}
+
+
+/* ===============================================
+   PRINT STYLES
+   =============================================== */
+
+@media print {
+    .hero-section {
+        background-image: none !important;
+        background-color: var(--primary-color) !important;
+    }
+    .section {
+        page-break-inside: avoid;
+    }
+}

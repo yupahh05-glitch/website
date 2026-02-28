@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - STEM School Behera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --primary: #0b1f3a;
+            --dark: #1a1a1a;
+            --accent: #c41e3a;
+            --background: #ffffff;
+            --alternate-bg: #f5f5f5;
+            --text-dark: #1a1a1a;
+            --text-body: #555555;
+            --text-light: #777777;
+            --text-white: #ffffff;
+            --border-light: #e8e8e8;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-body);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+        }
+        /* HERO SECTION */
+        
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            min-height: 600px;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('image with intersting sky.jpeg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 31, 58, 0.50);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            max-width: 700px;
+            animation: fadeUpOnLoad 0.8s ease-out;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 8vw, 56px);
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            font-family: 'Merriweather', serif;
+        }
+        
+        @keyframes fadeUpOnLoad {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                padding: 100px 0 80px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+        /* SECTIONS */
+        
+        section {
+            padding: 120px 0;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+        }
+        
+        section.alternate {
+            background-color: var(--alternate-bg);
+        }
+        
+        section.dark {
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
+            color: var(--text-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section.dark .section-title {
+            color: var(--text-white);
+        }
+        
+        section.dark .section-subtitle {
+            color: var(--accent);
+        }
+        
+        section.dark .column-text li,
+        section.dark .column-text p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        section.dark::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(196, 30, 58, 0.1), transparent);
+            pointer-events: none;
+        }
+        /* SECTION TITLE */
+        
+        .section-subtitle {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+            line-height: 1.2;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            border-radius: 2px;
+        }
+        
+        section.dark .section-title::after {
+            background: linear-gradient(to right, var(--accent), rgba(196, 30, 58, 0.3));
+        }
+        /* TWO COLUMN LAYOUT */
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+        
+        .column-text ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .column-text li {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            color: var(--text-body);
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .column-text li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .column-text p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-body);
+            margin-bottom: 20px;
+        }
+        /* IMAGE STYLES */
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: var(--alternate-bg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.04);
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .image-full {
+            width: 100%;
+            margin-top: 60px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .image-full img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+        /* THREE CARD GRID */
+        
+        .three-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            .three-card-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        .card {
+            background-color: var(--background);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 320px;
+            background-color: var(--alternate-bg);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.08);
+        }
+        
+        .card-content {
+            padding: 40px 32px;
+        }
+        
+        .card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+        
+        .card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+        
+        section.dark .card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        section.dark .card h3 {
+            color: var(--text-white);
+        }
+        
+        section.dark .card p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        /* CENTERED SECTION */
+        
+        .centered-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .centered-content h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+        
+        .centered-content ul {
+            list-style: none;
+            margin-bottom: 40px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .centered-content li {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-body);
+        }
+        /* STAFF SECTION */
+        
+        .staff-list {
+            background-color: var(--background);
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .staff-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 17px;
+        }
+        
+        .staff-item:last-child {
+            border-bottom: none;
+        }
+        
+        .staff-item .position {
+            color: var(--text-body);
+        }
+        
+        .staff-item .count {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 50px;
+            text-align: right;
+        }
+        /* LEADERSHIP SECTION */
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .leadership-card {
+            text-align: center;
+        }
+        
+        .leadership-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: var(--alternate-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .leadership-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .leadership-card h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        
+        .leadership-card .title {
+            font-size: 16px;
+            color: var(--text-body);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .leadership-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+        
+        section.dark .leadership-card h4 {
+            color: var(--text-white);
+        }
+        
+        section.dark .leadership-card .title {
+            color: var(--accent);
+        }
+        
+        section.dark .leadership-card p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .closing-section {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .closing-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--text-dark);
+        }
+        
+        .closing-section p {
+            font-size: 17px;
+            line-height: 2;
+            color: var(--text-body);
+        }
+        /* ANIMATIONS */
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .fade-up.visible {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in {
+            opacity: 0;
+        }
+        
+        .fade-in.visible {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Parallax image effect */
+        
+        .parallax-image {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Image reveal animation */
+        
+        .image-reveal img {
+            animation: imageSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        @keyframes imageSlideIn {
+            0% {
+                opacity: 0;
+                clip-path: inset(50% 0 50% 0);
+            }
+            100% {
+                opacity: 1;
+                clip-path: inset(0% 0 0% 0);
+            }
+        }
+        /* FOOTER */
+        
+        .site-footer {
+            background: #0b1f3a;
+            color: rgba(255, 255, 255, 0.95);
+            padding: 40px 0 24px;
+            margin-top: 40px;
+        }
+        
+        .site-footer h4,
+        .site-footer h5 {
+            margin-bottom: 8px;
+            font-family: 'Merriweather', serif;
+            color: #ffffff;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .site-footer p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar solid" role="navigation">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">STEM School – Behera</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="harvard-backdrop" hidden></div>
+    <aside class="harvard-menu" aria-hidden="true">
+        <nav class="harvard-nav" aria-label="Main navigation">
+            <ul class="harvard-list">
+                <li class="menu-item">
+                    <a href="../index.html" class="menu-main-link">STEM School – Behera</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../circullum2/index.html" class="menu-main-link">Academics</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../admissions/index.html" class="menu-main-link">Admissions</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">Campus Life</button>
+                    <ul class="submenu">
+                        <li><a href="../campus-life/index.html">Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="../extracurricular/extracurricular.html" class="menu-main-link">Extracurricular</a>
+                </li>
+                <li class="menu-item">
+                    <button class="menu-parent" aria-expanded="false">About</button>
+                    <ul class="submenu">
+                        <li><a href="../about/history.html">History</a></li>
+                        <li><a href="../team/index.html">Our Team</a></li>
+                        <li><a href="../care-services/index.html">Care Services</a></li>
+                        <li><a href="index.html">Who We Are</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content fade-up visible">
+                <h1>Who We Are</h1>
+                <p>Behera STEM School is a fully governmental institution established in 2025 in Damanhour, Behera Governorate, serving high-achieving students in Science, Technology, Engineering, and Mathematics under the Egyptian Ministry of Education.</p>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 2: OUR IDENTITY -->
+    <section class="fade-up">
+        <div class="container">
+            <span class="section-subtitle">Foundation</span>
+            <h2 class="section-title">Our Identity</h2>
+            <div class="two-column">
+                <div class="column-text">
+                    <ul>
+                        <li>Governmental STEM school</li>
+                        <li>Established 2025</li>
+                        <li>Supervised by Central Unit for STEM Schools and Gifted Education Affairs</li>
+                        <li>Community focused on preparing future scientists, engineers, and innovators</li>
+                    </ul>
+                </div>
+                <div class="image-container image-reveal">
+                    <img src="campus activities.jpeg" alt="Campus Life">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: OUR APPROACH -->
+    <section class="dark fade-up">
+        <div class="container">
+            <span class="section-subtitle">Learning Methods</span>
+            <h2 class="section-title">Our Approach</h2>
+            <div class="three-card-grid">
+                <div class="card">
+                    <div class="card-image image-reveal">
+                        <img src="https://images.unsplash.com/photo-1511974035430-5de47d3b95da?w=800&h=600&fit=crop" alt="Independent Learning">
+                    </div>
+                    <div class="card-content">
+                        <h3>Independent Learning</h3>
+                        <p>Students develop critical thinking and self-directed inquiry skills through rigorous academic standards and individual research initiatives.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image image-reveal">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Project-Based Learning">
+                    </div>
+                    <div class="card-content">
+                        <h3>Project-Based Learning</h3>
+                        <p>Practical, hands-on projects that integrate multiple disciplines, requiring students to solve real-world problems collaboratively.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image image-reveal">
+                        <img src="capstoen.jpeg" alt="Capstone Research">
+                    </div>
+                    <div class="card-content">
+                        <h3>Capstone Research</h3>
+                        <p>Comprehensive scientific research projects that culminate student learning, emphasizing original investigation and academic rigor.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-full image-reveal">
+                <img src="in the lab.jpeg" alt="Project Work">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CAMPUS & LABORATORIES -->
+    <section class="fade-up">
+        <div class="container">
+            <span class="section-subtitle">Facilities</span>
+            <h2 class="section-title">Campus & Laboratories</h2>
+            <div class="two-column">
+                <div class="column-text">
+                    <ul>
+                        <li>Fully equipped academic campus</li>
+                        <li>11 specialized laboratories</li>
+                        <li>Physics, Chemistry, Biology, Geology, Mechanics, and Computer labs</li>
+                        <li>Hands-on experimental learning environment</li>
+                    </ul>
+                </div>
+                <div class="image-grid">
+                    <div class="image-container image-reveal">
+                        <img src="in the lab.jpeg" alt="Laboratory">
+                    </div>
+                    <div class="image-container image-reveal">
+                        <img src="WhatsApp Image 2026-02-12 at 00.20.24.jpeg" alt="Computer Laboratory">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BOARDING SYSTEM -->
+    <section class="alternate fade-up">
+        <div class="container">
+            <span class="section-subtitle">Residential Life</span>
+            <h2 class="section-title">Boarding System</h2>
+            <div class="two-column">
+                <div class="image-container">
+                    <img src="WhatsApp Image 2026-02-11 at 22.14.22.jpeg" alt="Dormitory">
+                </div>
+                <div class="column-text">
+                    <ul>
+                        <li>Full residential system</li>
+                        <li>Comprehensive supervision and safety protocols</li>
+                        <li>Healthy meals and maintenance services</li>
+                        <li>Structured academic living environment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: OUR COMMUNITY -->
+    <section class="dark fade-up">
+        <div class="container">
+            <span class="section-subtitle">Student Body</span>
+            <h2 class="section-title">Our Community</h2>
+            <div class="centered-content">
+                <h3 style="color: var(--text-white); margin-bottom: 20px;">First Cohort: 102 Students</h3>
+                <ul>
+                    <li><strong>5 Classes</strong></li>
+                    <li><strong>3 Boys' Classes</strong></li>
+                    <li><strong>2 Girls' Classes</strong></li>
+                </ul>
+                <div class="image-full image-reveal" style="margin-top: 60px;">
+                    <img src="WhatsApp Image 2026-02-12 at 00.20.24.jpeg" alt="Classroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: OUR STAFF -->
+    <section class="alternate fade-up">
+        <div class="container">
+            <span class="section-subtitle">Personnel</span>
+            <h2 class="section-title">Our Staff</h2>
+            <div class="staff-list">
+                <div class="staff-item">
+                    <span class="position">Principal</span>
+                    <span class="count">1</span>
+                </div>
+                <div class="staff-item">
+                    <span class="position">Vice Principal</span>
+                    <span class="count">1</span>
+                </div>
+                <div class="staff-item">
+                    <span class="position">Teachers</span>
+                    <span class="count">17</span>
+                </div>
+                <div class="staff-item">
+                    <span class="position">Specialists</span>
+                    <span class="count">7</span>
+                </div>
+                <div class="staff-item">
+                    <span class="position">Laboratory Technicians</span>
+                    <span class="count">5</span>
+                </div>
+                <div class="staff-item">
+                    <span class="position">Administrative Officer</span>
+                    <span class="count">1</span>
+                </div>
+                <div class="staff-item">
+                    <span class="position">Worker</span>
+                    <span class="count">15</span>
+                </div>
+                <div style="text-align: center; padding-top: 30px; border-top: 2px solid var(--accent); margin-top: 20px;">
+                    <span style="font-weight: 700; font-size: 18px; color: var(--accent);">Total: 47 Staff Members</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: LEADERSHIP -->
+    <section class="dark fade-up">
+        <div class="container">
+            <span class="section-subtitle">Administration</span>
+            <h2 class="section-title">Leadership</h2>
+            <div class="leadership-grid">
+                <div class="leadership-card image-reveal">
+                    <div class="leadership-photo">
+                        <img src="the principle.jpeg" alt="Principal">
+                    </div>
+                    <h4>Emadudin Touny</h4>
+                    <div class="title">Principal</div>
+                </div>
+                <div class="leadership-card image-reveal">
+                    <div class="leadership-photo">
+                        <img src="the vice principle.jpeg" alt="Vice Principal">
+                    </div>
+                    <h4>Ezz Eldin Qandel</h4>
+                    <div class="title">Vice Principal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: OUR STUDENTS -->
+    <section class="alternate fade-up">
+        <div class="container">
+            <div class="closing-section">
+                <h2>Our Students</h2>
+                <p>Students are selected through the official national STEM admission system based on academic excellence. The school prepares them to become future researchers, engineers, and innovators contributing to Egypt's scientific and technological
+                    development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script src="../main.js"></script>
+
+</body>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>STEM School — Behera</h4>
+                <p>Ministry of Education — Damanhour, Behera Governorate</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 STEM School – Behera. All rights reserved.</div>
+    </div>
+</footer>
+
+</html>
